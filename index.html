@@ -1,14 +1,8 @@
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/thomaspark/bootswatch/gh-pages/slate/bootstrap.min.css" />
-  
-        <!-- Bootstrap JS Dependencies -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="a-frame_0_8_2.min.js"></script>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>     
         <script src="aframe-extras.min.js"></script>
         <script src="aframe-physics-system.min.js"></script>
-        <script src="https://cdn.rawgit.com/gladeye/aframe-preloader-component/1.0.2/dist/aframe-preloader-component.min.js"></script>
 
         <title>Squid game</title>
         <link rel="stylesheet" href="style.css">
@@ -17,7 +11,7 @@
         <meta name="keywords" content="squid game, VR, webVR, browser game">
     </head>
     <body style="user-select: none; -webkit-app-region:drag;">
-        <a-scene onclick="run()" preloader physics="debug: false">
+        <a-scene onclick="run()" loading-screen="dotsColor: red; backgroundColor: black" physics="debug: false">
             <!-- <div id="preloader"></div> -->
             <!-- assets -->
             <a-assets>
@@ -54,7 +48,7 @@
 
 
               
-            <a-entity look-controls kinematic-body="radius: 0.8" wasd-controls position="0 1.6 0" id="cameraWrapper" fly="false">
+            <a-entity look-controls static-body wasd-controls position="0 1.6 0" id="cameraWrapper" fly="false">
                 <a-entity camera position="0 1.6 0" ></a-entity>
             </a-entity>
             <a-entity light="type: ambient; color: #CCC"></a-entity>
@@ -63,7 +57,7 @@
         <script src="script.js">
         </script>
         <script>
-            alert("Instruction:Click anywhere to run forward!")
+            alert("Click anywhere to run forward")
         </script>
     </body>
 </html>
