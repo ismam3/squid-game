@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="a-frame_0_8_2.min.js"></script>
+        <script src="aframe-extras.min.js"></script>
+        <script src="aframe-physics-system.min.js"></script>
+        <title>Squid game</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="description" content="Squid game in webVR
+        ">
+        <meta name="keywords" content="squid game, VR, webVR, browser game">
+    </head>
+    <body style="user-select: none; -webkit-app-region:drag;">
+        <a-scene onclick="run()" loading-screen="dotsColor: red; backgroundColor: black" physics="debug: false">
+            <!-- <div id="preloader"></div> -->
+            <!-- assets -->
+            <a-assets>
+                <img id="concrete_texture" src="textures/concrete_texture.jpg">
+                <img id="white_marbel" src="textures/white_marbel_tiles.jpg">
+                <img id="sky_texture" src="textures/clear_sky.jpeg">
+                <a-asset-item id="giant_doll" src="models/giant_doll/scene.gltf"></a-asset-item>
+            </a-assets>
+              
+
+
+              <!-- sky -->
+            <a-sky src="#sky_texture"></a-sky>
+            <!-- plane -->
+            <a-plane static-body rotation="-90 0 0" material="src:#white_marbel;repeat:500 500" scale="50 50 0" position="0 0 -20"></a-plane>
+
+            <!-- last line -->
+            <a-plane color="#F00" position="0 0.05 -30" scale="50 0.2 0.5"></a-plane>
+
+            <!-- walls -->
+            <a-box static-body depth="50" height="16" width="0.5" position="25 8 -20" src="#sky_texture"></a-box>
+            <a-box static-body depth="50" height="16" width="0.5" position="-25 8 -20" src="#sky_texture"></a-box>
+            <a-box static-body depth="0.5" height="16" width="50" position="0 8 -45" src="#sky_texture"></a-box>
+            <a-box static-body depth="0.5" height="16" width="50" position="0 8 5" src="#sky_texture"></a-box>
+
+            
+            <a-box id="timer_bar" width="8" height="3" depth="0.5" position="10 10 -44" color="#000">
+                <a-text id="timer" value="0:00" color="red" position="-2.2 0 .5" scale="10 10 1"></a-text>
+            </a-box>
+
+            
+            <a-entity id="doll" rotation="0 0 0" scale="0.5 0.5 1" position="0 2.5 -40" gltf-model="#giant_doll">
+            </a-entity>
+
+
+              
+            <a-entity look-controls kinematic-body="radius: 0.8" wasd-controls position="0 1.6 0" id="cameraWrapper" fly="false">
+                <a-entity camera position="0 1.6 0" ></a-entity>
+            </a-entity>
+            <a-entity light="type: ambient; color: #CCC"></a-entity>
+        </a-scene>
+        <audio src="audios/game_sound.mp3" id="game_audio" autoplay></audio>
+        <script src="script.js">
+        </script>
+    </body>
+</html>

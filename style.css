@@ -1,0 +1,32 @@
+#preloader{
+    z-index: 4;
+    background: #000 url(preloader.gif) no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+}
+.fail_container{
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: red;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+.fail_container p, .success_container p{
+    font-size: 48px;
+    display: block;
+}
+.success_container{
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: green;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
