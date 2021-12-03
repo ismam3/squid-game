@@ -29,6 +29,7 @@ var time = 59;
                     clearInterval(look_backward);
                     clearInterval(look_forward);
                     game_audio.src="audios/pink_soldiers.mp3"
+                    game_audio.play();
                 }
             },1000)
             var angle = 0;
